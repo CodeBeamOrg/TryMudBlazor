@@ -2,7 +2,7 @@
 
 <MudLayout Class="try-mudblazor-index">
     <MudAppBar Color="Color.Transparent" Fixed="false" Elevation="0">
-        <div class="brand">Try<span>MudBlazor</span></div>
+        <div class="brand">Try<span>MudExtensions</span></div>
         <MudSpacer />
         <MudButton Href="https://mudblazor.com/" Color="Color.Default" Size="Size.Large">MudBlazor</MudButton>
         <MudButton Href="https://github.com/MudBlazor/TryMudBlazor" Color="Color.Primary" Size="Size.Large">Source Code</MudButton>
@@ -13,10 +13,10 @@
                 <MudItem xs="12">
                     <div>
                         <MudText Typo="Typo.h1">
-                            Try<MudText Typo="Typo.h1" Inline="true" Color="Color.Primary">MudBlazor</MudText>
+                            Try<MudText Typo="Typo.h1" Inline="true" Color="Color.Primary">MudBlazor & MudExtensions</MudText>
                         </MudText>
                         <MudText Typo="Typo.h4" Class="mud-text-secondary ml-2 my-5">
-                            A playground for <MudLink Typo="Typo.h4" Href="https://mudblazor.com" Target="_blank">MudBlazor</MudLink> @Version
+                            A playground for <MudLink Typo="Typo.h4" Href="https://mudblazor.com" Target="_blank">MudBlazor</MudLink> @Version and <MudLink Typo="Typo.h4" Href="https://mudextensions.codebeam.org" Target="_blank">MudExtensions</MudLink> @MudExtensionsVersion
                         </MudText>
                         <div class="px-2 mt-8">
                             <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" DisableElevation="true" Class="px-6" Href="/snippet">Play now</MudButton>
@@ -153,4 +153,13 @@
 
 @code { 
     string Version { get { var v = typeof(MudText).Assembly.GetName().Version; return $"v{v.Major}.{v.Minor}.{v.Build}"; } } 
+
+    private string MudExtensionsVersion
+    {
+        get
+        {
+            var v = typeof(MudLoadingButton).Assembly.GetName().Version;
+            return $"v{v.Major}.{v.Minor}.{v.Build}";
+        }
+    }
 }
